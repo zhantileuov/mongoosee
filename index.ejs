@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%=title%></h1>
+
+
+  <%  ho.forEach(function(item){ %>
+    <form action="/delete" method="post">
+      <input onChange="this.form.submit()" type="checkbox" name="check" value="<%=item._id%>">
+      <p><%=item.name%></p>
+      <input type="hidden" name="listName" value="<%= title %>"></input>
+    </form>
+
+  <%  }) %>
+  <form action="/" method="post">
+    <input type="text" name="item" placeholder="add new item">
+    <button type="submit" name="button" value="<%=title%>">+</button>
+  </form>
+  </body>
+
+</html>
